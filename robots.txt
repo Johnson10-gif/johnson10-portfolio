@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio.johnson10.com/sitemap.xml
+Sitemap: https://johnson10-gif.github.io/johnson10-portfolio/sitemap.xml
