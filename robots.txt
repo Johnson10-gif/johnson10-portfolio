@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://johnson10-gif.github.io/johnson10-portfolio/sitemap.xml

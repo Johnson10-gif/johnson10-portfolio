@@ -6,7 +6,6 @@ const projectNote = document.querySelector("#project-note");
 
 function safeWebUrl(value) {
   if (!value) return null;
-
   try {
     const url = new URL(value);
     return url.protocol === "https:" || url.protocol === "http:" ? url.href : null;
@@ -18,14 +17,12 @@ function safeWebUrl(value) {
 function formatUpdatedDate(dateString) {
   const date = new Date(dateString);
   if (Number.isNaN(date.getTime())) return "";
-
   return new Intl.DateTimeFormat("en-GB", { month: "short", year: "numeric" }).format(date);
 }
 
 function createProjectCard(repo) {
   const card = document.createElement("article");
   card.className = "project-card";
-
   const websiteUrl = safeWebUrl(repo.homepage);
   const repositoryUrl = safeWebUrl(repo.html_url);
   const primaryUrl = websiteUrl || repositoryUrl;
@@ -91,16 +88,14 @@ async function loadProjects() {
     const repos = [];
     let page = 1;
     let currentPage;
-
     do {
       const response = await fetch(`${PROJECTS_ENDPOINT}?per_page=100&page=${page}&sort=updated`, {
-        headers: { Accept: "application/vnd.github+json" }
+        headers: { Accept: "application/vnd.github+json" },
+        cache: "force-cache"
       });
-
       if (!response.ok) {
         throw new Error(`GitHub API returned status ${response.status}.`);
       }
-
       currentPage = await response.json();
       if (!Array.isArray(currentPage)) {
         throw new Error("GitHub returned an unexpected response.");
@@ -123,8 +118,12 @@ async function loadProjects() {
       projectMessage.append(message);
       return;
     }
-
-    const cards = repos.map(createProjectCard);
+    const publicRepos = repos.filter((repo) => !repo.private && !repo.fork);
+    const cards = publicRepos.map(createProjectCard);
+    if (cards.length === 0) {
+      showMessage("No public original repositories are available yet.", "is-empty");
+      return;
+    }
     projectGrid.replaceChildren(...cards);
     projectNote.hidden = false;
   } catch (error) {
@@ -148,17 +147,27 @@ async function loadProjects() {
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector("#nav-links");
 
-menuToggle.addEventListener("click", () => {
-  const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-  menuToggle.setAttribute("aria-expanded", String(!isExpanded));
-  navLinks.classList.toggle("is-open", !isExpanded);
-});
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+    navLinks.classList.toggle("is-open", !isExpanded);
+  });
 
-navLinks.addEventListener("click", (event) => {
-  if (event.target instanceof HTMLAnchorElement) {
-    menuToggle.setAttribute("aria-expanded", "false");
-    navLinks.classList.remove("is-open");
-  }
-});
+  navLinks.addEventListener("click", (event) => {
+    if (event.target instanceof HTMLAnchorElement) {
+      menuToggle.setAttribute("aria-expanded", "false");
+      navLinks.classList.remove("is-open");
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+      menuToggle.setAttribute("aria-expanded", "false");
+      navLinks.classList.remove("is-open");
+      menuToggle.focus();
+    }
+  });
+}
 
 loadProjects();

@@ -1,48 +1,72 @@
 <!doctype html>
 <html lang="en">
   <head>
-      <meta name="google-site-verification" content="7_Bz9gP71rd2Ms50U8U5s3CJvgsB83yxIrjcdyfMNXQ">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0c3979">
-    <meta name="description" content="Explore the portfolio, software projects, IoT final-year project, and book by Johnson Athanas Mwakyusa, a Computer Science student at MWECAU.">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <title>Johnson 10 | Johnson Mwakyusa's Portfolio</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Johnson Athanas Mwakyusa">
+    <meta name="description" content="Portfolio of Johnson Athanas Mwakyusa: Computer Science student at MWECAU, software projects, IoT smart-system project, and the book Mistake of Silence.">
+    <title>Johnson Mwakyusa | personal Portfolio</title>
     <link rel="canonical" href="https://johnson10-gif.github.io/johnson10-portfolio/">
-    <link rel="sitemap" type="application/xml" href="https://johnson10-gif.github.io/johnson10-portfolio/sitemap.xml">
+    <link rel="icon" type="image/jpeg" href="johnson-passport.jpeg">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://johnson10-gif.github.io/johnson10-portfolio/sitemap.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.github.com">
+    <link rel="stylesheet" href="styles.css">
+
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_TZ">
     <meta property="og:site_name" content="Johnson 10">
-    <meta property="og:title" content="Johnson 10 | Johnson Mwakyusa's Portfolio">
+    <meta property="og:title" content="Johnson Mwakyusa | personal Portfolio">
     <meta property="og:description" content="Explore Johnson Mwakyusa's software projects, IoT final-year project, and book.">
     <meta property="og:url" content="https://johnson10-gif.github.io/johnson10-portfolio/">
     <meta property="og:image" content="https://johnson10-gif.github.io/johnson10-portfolio/johnson-passport.jpeg">
     <meta property="og:image:alt" content="Portrait of Johnson Athanas Mwakyusa">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="preconnect" href="https://api.github.com">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="twitter:title" content="Johnson Mwakyusa | personal Portfolio">
+    <meta name="twitter:description" content="Explore Johnson Mwakyusa's software projects, IoT final-year project, and book.">
+    <meta name="twitter:image" content="https://johnson10-gif.github.io/johnson10-portfolio/johnson-passport.jpeg">
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Johnson Athanas Mwakyusa",
-        "url": "https://johnson10-gif.github.io/johnson10-portfolio/",
-        "image": "https://johnson10-gif.github.io/johnson10-portfolio/johnson-passport.jpeg",
-        "email": "johnsonmwakyusa8@gmail.com",
-        "telephone": "+255677855005",
-        "jobTitle": "Computer Science student",
-        "affiliation": {
-          "@type": "CollegeOrUniversity",
-          "name": "MWECAU"
-        },
-        "sameAs": [
-          "https://github.com/johnson10-gif"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://johnson10-gif.github.io/johnson10-portfolio/#website",
+            "url": "https://johnson10-gif.github.io/johnson10-portfolio/",
+            "name": "Johnson 10",
+            "inLanguage": "en",
+            "publisher": {
+              "@id": "https://johnson10-gif.github.io/johnson10-portfolio/#person"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://johnson10-gif.github.io/johnson10-portfolio/#person",
+            "name": "Johnson Athanas Mwakyusa",
+            "url": "https://johnson10-gif.github.io/johnson10-portfolio/",
+            "image": "https://johnson10-gif.github.io/johnson10-portfolio/johnson-passport.jpeg",
+            "email": "johnsonmwakyusa8@gmail.com",
+            "telephone": "+255677855005",
+            "jobTitle": "Computer Science student",
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "MWECAU"
+            },
+            "sameAs": [
+              "https://github.com/johnson10-gif"
+            ]
+          }
         ]
       }
     </script>
     <script src="app.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="contact-strip">
       <a href="mailto:johnsonmwakyusa8@gmail.com">✉ <span>johnsonmwakyusa8@gmail.com</span></a>
       <a href="tel:+255677855005">☎ <span>+255 677 855 005</span></a>
@@ -74,7 +98,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <div class="intro-shell">
       <section class="hero container" id="home">
         <div class="hero-copy">
@@ -166,19 +190,19 @@
           </div>
           <div class="project-gallery" aria-label="Final-year project images">
             <figure class="project-image-card">
-              <img src="project-images/working-prototype.png" alt="Working prototype with a fan, light, Arduino controller and control circuit">
+              <img src="project-images/working-prototype.png" alt="Working prototype with a fan, light, Arduino controller and control circuit" loading="lazy" width="1200" height="900">
               <figcaption><strong>Working prototype</strong><span>Light and fan controlled by the system</span></figcaption>
             </figure>
             <figure class="project-image-card">
-              <img src="project-images/system-architecture.png" alt="System architecture showing the phone, GSM network, Arduino, relay module and appliances">
+              <img src="project-images/system-architecture.png" alt="System architecture showing the phone, GSM network, Arduino, relay module and appliances" loading="lazy" width="1200" height="900">
               <figcaption><strong>System architecture</strong><span>How commands travel from the phone to the appliances</span></figcaption>
             </figure>
             <figure class="project-image-card">
-              <img src="project-images/sms-interface.png" alt="SMS conversation showing commands to switch appliances on and off">
+              <img src="project-images/sms-interface.png" alt="SMS conversation showing commands to switch appliances on and off" loading="lazy" width="1200" height="900">
               <figcaption><strong>SMS control</strong><span>Text commands and system responses</span></figcaption>
             </figure>
             <figure class="project-image-card">
-              <img src="project-images/hardware-overview.jpeg" alt="Labeled project hardware including Arduino Uno, GSM and relay modules, light and fan">
+              <img src="project-images/hardware-overview.jpeg" alt="Labeled project hardware including Arduino Uno, GSM and relay modules, light and fan" loading="lazy" width="1200" height="900">
               <figcaption><strong>Hardware components</strong><span>Controller, GSM module, relay, light and fan</span></figcaption>
             </figure>
           </div>
@@ -200,7 +224,7 @@
           </div>
           <div class="book-feature">
             <div class="book-cover-wrap">
-              <img class="book-cover" src="book-images/mistake-of-silence-cover.jpeg" alt="Cover of Mistake of Silence (Kosa la Ukimya) by Johnson Athanas Mwakyusa">
+              <img class="book-cover" src="book-images/mistake-of-silence-cover.jpeg" alt="Cover of Mistake of Silence (Kosa la Ukimya) by Johnson Athanas Mwakyusa" loading="eager" width="680" height="1009">
             </div>
             <div class="book-details">
               <p class="book-kicker">A SWAHILI-LANGUAGE BOOK</p>
@@ -220,27 +244,27 @@
           </div>
           <div class="book-gallery" aria-label="Illustrations from Mistake of Silence">
             <figure class="book-image-card">
-              <img src="book-images/silence-and-reflection.jpeg" alt="A person reflecting alone at sunset">
+              <img src="book-images/silence-and-reflection.jpeg" alt="A person reflecting alone at sunset" loading="lazy" width="1200" height="800">
               <figcaption><strong>Reflection and silence</strong><span>Making space to question what silence protects.</span></figcaption>
             </figure>
             <figure class="book-image-card">
-              <img src="book-images/silence-and-gender.jpeg" alt="A couple sitting apart during a difficult moment">
+              <img src="book-images/silence-and-gender.jpeg" alt="A couple sitting apart during a difficult moment" loading="lazy" width="1200" height="800">
               <figcaption><strong>Silence and gender</strong><span>How silence can deepen personal and social harm.</span></figcaption>
             </figure>
             <figure class="book-image-card">
-              <img src="book-images/silence-and-young-people.jpeg" alt="An empty chair and a fading figure">
+              <img src="book-images/silence-and-young-people.jpeg" alt="An empty chair and a fading figure" loading="lazy" width="1200" height="800">
               <figcaption><strong>Young people’s voices</strong><span>Why young people deserve to be heard.</span></figcaption>
             </figure>
             <figure class="book-image-card">
-              <img src="book-images/speaking-up-together.jpeg" alt="A group gathered around a person speaking">
+              <img src="book-images/speaking-up-together.jpeg" alt="A group gathered around a person speaking" loading="lazy" width="1200" height="800">
               <figcaption><strong>Speaking up together</strong><span>The importance of openness and being heard.</span></figcaption>
             </figure>
             <figure class="book-image-card">
-              <img src="book-images/silence-and-inner-pain.jpeg" alt="A person alone beside a foggy road">
+              <img src="book-images/silence-and-inner-pain.jpeg" alt="A person alone beside a foggy road" loading="lazy" width="1200" height="800">
               <figcaption><strong>Silence and inner pain</strong><span>Recognising the personal weight of unspoken struggles.</span></figcaption>
             </figure>
             <figure class="book-image-card">
-              <img src="book-images/the-power-of-words.jpeg" alt="Artwork about the power of words">
+              <img src="book-images/the-power-of-words.jpeg" alt="Artwork about the power of words" loading="lazy" width="1200" height="800">
               <figcaption><strong>The power of words</strong><span>Choosing hope and words that can inspire change.</span></figcaption>
             </figure>
           </div>
